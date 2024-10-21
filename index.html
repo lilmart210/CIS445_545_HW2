@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div></div>
+    <div class="Navigation">
+        <button>Main</button>
+        <button>Home</button>
+        <button>GitHub</button>
+        <button>other</button>
+        <label>Drag Me, I Turn Gray</label>
+        <input id="change" type="range" value="0">
+    </div>
+    <img class="me" id='me' src="./noback.png" >
+    
+
+
+    <style>
+
+        * {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .me {
+            align-self: flex-end;
+            position: absolute;
+            left : 68vw;
+            top : 40vh;
+            user-select: none;
+            filter: grayscale(0);
+            pointer-events: none;
+        }
+        .Navigation {
+            position: absolute;
+            left : 35vw;
+            top : 40vh;
+            display: flex;
+            flex-direction: column;
+            width : 20rem;
+            gap : 5px;
+        }
+
+        .Navigation > label {
+            text-align: center;
+            background-color: white;
+        }
+        .Navigation > button {
+            border : none;
+
+        }
+        .Navigation > button:hover{ 
+            background-color: rgb(87, 93, 93);
+            color : white;
+        }
+        body {
+            display: flex;
+            background-color: rgb(157, 157, 157);
+            width : 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+    </style>
+        
+    <script>
+        const change = document.getElementById('change');
+        const me = document.getElementById('me');
+        change.addEventListener('change',(e)=>{
+            me.style.filter = `grayscale(${e.target.value}%)`
+        })
+    </script>
+</body>
+</html>
