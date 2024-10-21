@@ -70,7 +70,9 @@
         const change = document.getElementById('change');
         const me = document.getElementById('me');
         change.addEventListener('change',(e)=>{
-            me.style.filter = `grayscale(${e.target.value}%)`
+            const col = `grayscale(${e.target.value}%)`;
+            me.style.filter = col
+            change.style.filter = col;
         })
     </script>
 </body>
